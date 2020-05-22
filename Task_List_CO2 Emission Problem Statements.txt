@@ -1,0 +1,255 @@
+Predict the CO2 Emission from the cars
+
+Predict the CO2 Emission from the cars
+
+ 
+
+Instructions -
+
+    Please read the question carefully before attempting them.
+    Solve all the questions in a SINGLE jupyter notebook file.
+    In case name of the variable to be used is mentioned in the question, use the same name while Coding (marks are associated with it)
+    In your answers include your descriptions as and when mentioned. Think yourself as a Data Analysts, who needs to suggest and explain solutions to the client based on Data.
+
+ 
+CO2 EMISSIONS (Predicting CO 2 Emissions of Cars)
+
+ 
+
+Think yourself as a Data Analysts, who needs to suggest and explain solutions to the client based on Data. Climate change due to carbon dioxide (CO2) emissions is one of the most complex challenges threatening our planet. This issue considered as a great and international
+
+concern that primary attributed from different fossil fuels.
+
+ 
+
+To reduce the effect of Global Warming caused mainly due to CO2 cars manufacturing companies are pre-estimating the CO2 emissions for a newly manufactured car that is about to launch in near future based on the features of the car. 
+
+This project deals with estimating the CO2 Emissions for a newly manufactured car by making a regression model which can accurately predetermine the car CO2 emissions before it is being manufactured/launched.
+
+ 
+
+Note - For working on this Project, we recommend the use of Python 3.x version with libraries such as Numpy, Pandas, Matplotlib, Seaborn, SkLearn, Scipy, statsmodels), Jupyter Notebook, MySQL. Also, the knowledge of Supervised Learning: Regression is required.
+
+The Data given here is for the Year 2014 manufactured Cars.
+
+ 
+
+YEAR – Year of manufacturing of the car.
+
+MAKE – Manufacturing company name.
+
+VEHICLECLASS – Type of vehicles like SUV or medium-sized etc.
+
+ENGINESIZE – Size of the car’s engine (expressed in cc or cubic centimeter).
+
+CYLINDERS – Number of Cylinders in the engine.
+
+TRANSMISSION – Automatic or manual transmission with number of gears.
+
+FUELTYPE – It indicates the type of fuel car use i.e. Diesel, Petrol, Z (Unleaded Petrol), etc.
+
+FUELCONSUMPTION_CITY – Fuel consumption or Fuel economy of the car while running in the city
+
+expressed in miles per gallon.
+
+FUELCONSUMPTION_HWY - Fuel Consumption or Fuel economy of car on highway expressed in
+
+miles per gallon.
+
+FUELCONSUMPTION_COMB – Net or combination of Fuel Economy expressed in miles per gallon.
+
+FUELCONSUMPTION_COMB_MPG – Total fuel economy expressed in miles per gallon.
+
+CO2EMISSIONS – The CO2 emitted by the car expressed in grams.
+
+ 
+
+Your task is to create a Predictive Model using Linear Regression Technique.
+
+ 
+
+Data file – CO2 emission.csv
+
+ 
+
+Task 1 – Loading the Data
+
+ 
+
+    a) Install the Pandas library. Import the library into the code file
+
+(Hint: install pandas in jupyter notebook using
+
+!pip install pandas
+
+)
+
+ 
+
+    b) Import the required libraries. Store the data from the file “CO2csv” into Pandas
+
+dataframe and call it emission.
+
+(Import all libraries like:-
+
+ 
+
+import pandas as pd
+
+import seaborn as sns
+
+import matplotlib.pyplot as plt
+
+import numpy as np
+
+from sklearn import linear_model, metrics
+
+ 
+
+)
+
+ 
+
+Task 2 - Analysing and cleaning data
+
+ 
+
+    a) Analyze the shape of the Data using emission dataframe variable. Check the no. of rows and Columns available.
+
+ 
+
+    b) Print the top 5 rows and check the values.
+
+ 
+
+    c) Pick out four columns from the above dataframe which contributes towards CO2 emissions for a car and rename it as emission_new.
+
+ 
+
+Task 3 - Perform explanatory analysis
+
+ 
+
+    a) Check the basic statistics of the given new dataset columns. Describe the Dataset in your words including the columns, their type, ranges, and other stats. Statistics should include the mean, median, standard deviation, different quartiles, minimum and maximum values of each column.
+
+ 
+
+    b) Check the units of all the columns.
+
+ 
+
+Task 4 - Visualizing the Data
+
+ 
+
+    a) Create the Box-plot of all the numeric columns and explain the result in your words for
+
+emission_new dataset using pandas hist () function.
+
+(Hint: In this, you need to plot a histogram for the complete new dataframe built using Pandas inbuilt function hist ()).
+
+ 
+
+    b) Next, you need to find out the dependent variable from all the selected 4 columns from initial
+
+dataframe using the corr () function available in pandas dataframe.
+
+ 
+
+    c) Plot a heatmap for correlation between all columns of emission_new dataframe by passing the corr () function to heatmap which will automatically plot the correlation heatmap for the dataframe.
+
+ 
+
+    d) Create a figure and plot 3 scatterplot graphs in the same row.
+
+ 
+
+    The first plot should be between ENGINESIZE and CO2EMISSIONS.
+    The second plot should be between CYLINDERS and CO2EMISSIONS.
+    The third plot should be between FUELCONSUMPTION_COMB and CO2EMISSIONS.
+
+ 
+
+Analyse the graphs and conclude which columns are the best fit for the independent variables for
+
+carrying out Linear Regression and which column can act for the Dependent Variable.
+
+ 
+
+    e) Now as we have concluded that CO2EMISSIONS is a dependent variable and ENGINESIZE, FUELCONSUMPTION_COMB are the two independent variables so plot an lmplot between
+
+    ENGINESIZE and CO2 EMISSIONS
+    FUELCONSUMPTION_COMB and CO2 EMISSIONS
+
+Task 5 - Creating a Prediction Model using Simple Linear Regression
+
+ 
+
+    a) Fit a Simple Linear Regression for CO2EMISSIONS and ENGINESIZE. Describe the model in your terms. The model should be named simple_model.
+
+ 
+
+    b) Find out the values of intercept slope and the R-square value
+
+ 
+
+    c) What will be the CO2 EMISSIONS using the above Model if engine size is 3.5.
+
+Show the steps done to find out the CO2 EMISSIONS value. (Write the mathematical equation used)
+
+    d) Perform part c) using the predict method for the model created in part b)
+
+ 
+
+Task 6 - Multivariate Prediction Model using Linear Regression
+
+ 
+
+In this model, we will use ENGINESIZE and FUELCONSUUMPTION_COMB as independent variables and construct a multivariate regression model using the same.
+
+    a) Fit a Linear Regression for CO2 EMISSIONS while keeping ENGINESIZE, FUELCONSUMPTION_COMB as two different x-parameters. The model should be named multi_model.
+
+ 
+
+    b) Find out the values of intercept slopes and the R-square value. Describe the model in your terms.
+
+ 
+
+    c) Write the Mathematical equation for CO2 EMISSIONS for this Model. Predict CO2 EMISSIONS for the below mentioned
+
+    ENGINESIZE is 3 and FUELCONSUMPTION_COMB is 10
+    ENGINESIZE is 3.5 and FUELCONSUMPTION_COMB is 7.87.
+
+Explain your answers in words
+
+ 
+
+    d) Perform part b) using the predict method for the model.
+
+ 
+
+    e) Compare the result in part b) and c)
+
+ 
+
+Task 7 - Model Performance
+
+As part of task 5) and 6) we created two different models. In this step, we will compare the two
+
+models (Simple_model and multi_model) by calculating the Error in the Models and will try to
+
+explain which Model is better and why.
+
+ 
+
+    a) For both the simple regression model (stored in simple_model) and Multi-variate model (stored in multi_model) find out the predicted value of Y, for the given X-values and store it in simple_y and multi_y.
+
+ 
+
+    b) Find out the Mean Squared Error, using the metrics module of sklearn, for both the models (using actual and predicted values of CO2 EMISSIONS). Store the result in simple_mse and multi_mse respectively.
+
+ 
+
+    c) Explain the result in step b) in your words describing which model is better and why?
+
+ 
